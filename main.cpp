@@ -3,10 +3,9 @@ Description:
 This is a random number generator.
 The rand_numbers function generates random numbers using the rand() function.
 The linear_congruential_generator function generates random numbers using the linear congruential generator.
-The rand() function generates random numbers between 0 and RAND_MAX.
 The linear congruential generator generates random numbers between 0 and m-1.
 The linear congruential generator generates a sequence of random numbers that are not truly random,
-it repeats after a certain number of iterations.
+it repeats after a certain number of iterations (16).
 Author: Pierre Baron
 Date: 17/01/2025
 */
@@ -34,7 +33,6 @@ void rand_numbers(int amount)
     myfile.open("random_with_rand().txt");
     if (myfile.is_open())
     {
-        myfile << "Author: Pierre Baron" << std::endl;
         for (int i = 0; i < amount; i++)
         {
             x = (rand() % 100) / 100.0f;
@@ -53,7 +51,6 @@ void linear_congruential_generator(int amount, int a, int m, int x0)
     myfile.open("random_with_LCG.txt");
     if (myfile.is_open())
     {
-        myfile << "Author: Pierre Baron" << std::endl;
         for (int i = 0; i < amount; i++)
         {
             x0 = (a * x0) % m;
